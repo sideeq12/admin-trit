@@ -5,6 +5,6 @@ import { Stats } from "../stat/stats"
 
 export const My_test = ()=> {
     return(
-        <Stats />
+        <Stats/>
     )
 }
