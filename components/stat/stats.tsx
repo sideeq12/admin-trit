@@ -3,77 +3,55 @@ import { Circle, Sta, Statistic } from "./statstyle"
 export const Stats = ()=>{
     const deliveryshadow : string = "0px 2.10101px 4.20202px rgba(0, 0, 0, 0.1)";
     const myback : string = "rgba(211, 237, 248, 0.3)";
+    const deliround : string = "#1EAD91"
     const delishadow : string = "0px 2.10101px 4.20202px rgba(0, 0, 0, 0.1)";
     const deliback : string = "rgba(245, 184, 94, 0.3)";
+    const pediround : string = "#F43F3F"
     const transback : string = "rgba(9, 102, 138, 0.1)";
     const backshadow : string ="0px 2.10101px 4.20202px rgba(0, 0, 0, 0.1)"
-
+    const backround : string = "#E2B93B"
+    
+  const getDegree =(rates : number)=>{
+    const res = Math.floor((rates*360)/100);
+    return res
+  }
     return(
        <Statistic>
-        <Sta shadow={deliveryshadow} back={myback}>
+        <Sta shadow={deliveryshadow} back={myback}  delir={deliround} rate={getDegree(66)}>
             <div className="content">
                 <strong>Delivered</strong>
                 <label htmlFor="delivered">66% orders delivered</label>
             </div>
-                <Circle>
-                <div class="card">
-  <div class="percent">
-    <svg>
-      <circle cx="105" cy="105" r="100"></circle>
-      <circle cx="105" cy="105" r="100" style="--percent: 60"></circle>
-    </svg>
-    <div class="number">
-      <h3>30<span>%</span></h3>
-    </div>
-  </div>
-  <div class="title">
-    <h2>HTML</h2>
-  </div>
-</div>
+                <Circle className="circle">
+                <div className="x-box">
+                  <div className="percent">66%</div>
+        </div>
 
-<div className="card">
-  <div className="percent">
-    <svg>
-      <circle cx="105" cy="105" r="100"></circle>
-      <circle cx="105" cy="105" r="100" style="--percent: 70"></circle>
-    </svg>
-    <div className="number">
-      <h3>70<span>%</span></h3>
-    </div>
-  </div>
-  <div className="title">
-    <h2>CSS</h2>
-  </div>
-</div>
-
-<div className="card">
-  <div className="percent">
-    <svg>
-      <circle cx="105" cy="105" r="100"></circle>
-      <circle cx="105" cy="105" r="100" style="--percent: 90"></circle>
-    </svg>
-    <div className="number">
-      <h3>90<span>%</span></h3>
-    </div>
-  </div>
-  <div className="title">
-    <h2>JavaScript</h2>
-  </div>
-</div>
                 </Circle>
-
         </Sta>
-        <Sta shadow={delishadow} back={deliback}>
+        <Sta shadow={delishadow} back={deliback} delir={pediround} rate={getDegree(23)}>
             <div className="content">
                 <strong>Pending</strong>
                 <label htmlFor="delivered">23% orders delivered</label>
             </div>
+            <Circle className="circle">
+                <div className="x-box">
+                  <div className="percent">23%</div>
+        </div>
+
+                </Circle>
         </Sta>
-        <Sta shadow={backshadow} back={transback}>
+        <Sta shadow={backshadow} back={transback} delir={backround} rate={getDegree(11)}>
             <div className="content">
                 <strong>In transit</strong>
                 <label htmlFor="delivered">11% orders delivered</label>
             </div>
+            <Circle className="circle">
+                <div className="x-box">
+                  <div className="percent">11%</div>
+        </div>
+
+                </Circle>
         </Sta></Statistic>
     )
 }
