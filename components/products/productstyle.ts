@@ -7,7 +7,7 @@ interface mydata {
 
 export const Product_section = styled.div`
         width : 90vw;
-        margin : 20px auto;
+        margin : 100px auto;
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
         .titlesection{
@@ -37,6 +37,9 @@ export const Product_section = styled.div`
             border-bottom: 1px solid #E3E3E3;
             label{
                 border-right: 1px solid #E3E3E3;
+              svg:hover{
+                  cursor: pointer;
+              }
             }label.id{
                 width : 7%;
             }
