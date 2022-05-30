@@ -50,10 +50,9 @@ export const Comment_layout = styled.div`
                 }
             }
         }
-        .reviewer{
-            width: 50%;
-        }
+        
         .review{
+            min-width: 45%;
             padding: 10px 0px;
             p{
             color: #5A5A5B;
