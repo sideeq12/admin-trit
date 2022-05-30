@@ -1,10 +1,34 @@
-import { Order_Summary, The_order } from "./ordered"
+import { Order_id, Order_Summary, The_order } from "./ordered"
 
 
 
 export const Use_order = () =>{
     return(
         <The_order>
+            <Order_id>
+            <div className="data">
+                <span>Delivery Address</span>
+                <div className="cont">
+                    <div className="line">
+                        <label htmlFor="ADDRES">Customer Name  </label> Jonathan Smith
+                    </div>
+                    <div className="line">
+                        <label htmlFor="ADDRES">Phone number  </label>+000-0000-0000
+                    </div>
+                    <div className="line">
+                        <label htmlFor="ADDRES">Email Address   </label> <span>jonathansmith@gmail.com</span>
+                    </div>
+                    <div className="line">
+                        <label htmlFor="ADDRES">Type</label>Delivery
+                    </div>
+                    <div className="line">
+                        <label htmlFor="ADDRES">Payment method </label><label htmlFor="000000">
+                            Paypal</label>
+                    </div>
+
+                </div>
+            </div>
+            </Order_id>
             <Order_Summary>
             <div className="first">
             <span>Order Summary</span>
