@@ -4,9 +4,8 @@ interface check{
     active : boolean
 }
 export const Email_layout = styled.div`
-    width : 90vw;
+    width : 80vw;
     margin : 20px auto;
-    border : 1px solid blue;
     justify-content: space-between;
     display: flex;
     .email_list{
@@ -77,11 +76,37 @@ export const MainEmail = styled.div`
             font-family: "Open sans";
             display: flex;
             flex-direction: column;
-        /* border: 1px solid red; */
+            margin-left: 10px;
             label{
                 color: #34ADDC;
                 font-size: small;
             }
         }
+        .cion{
+            margin-left: 150px;
+            display: flex;
+            gap: 1rem;
+        }
+    }
+    .messagecontent{
+        font-family: 'Open Sans';
+        h5{
+            font-size: 22px;
+            font-weight: bolder;
+        }
+        p{
+            font-size: small;
+            color: #5A5A5B;
+            letter-spacing: 0.5px;
+            word-spacing: 2px;
+        }
+    }
+
+    a{
+        /* background: ; */
+box-shadow: 0px 9.88235px 26.3529px rgba(52, 173, 220, 0.25);
+border-radius: 5px;
+
+
     }
 `
