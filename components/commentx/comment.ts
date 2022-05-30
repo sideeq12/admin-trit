@@ -10,7 +10,7 @@ export const Comment_layout = styled.div`
         border-bottom: 1px solid #E3E3E3;
         display: flex;
         .product{
-            width: 35%;
+            min-width: 35%;
             display: flex;
             justify-content: flex-start;
             align-items: center;
@@ -36,7 +36,7 @@ export const Comment_layout = styled.div`
             padding : 20px 0px;
         }
         .reviewer{
-            width: 15%;
+            min-width: 15%;
             display: flex;
             align-items: flex-start;
             justify-content: center;
@@ -52,6 +52,13 @@ export const Comment_layout = styled.div`
         }
         .reviewer{
             width: 50%;
+        }
+        .review{
+            padding: 10px 0px;
+            p{
+            color: #5A5A5B;
+            font-size: small;
+            }
         }
     }
 `
