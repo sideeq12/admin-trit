@@ -7,7 +7,7 @@ interface spandata{
 
 export const Order_section = styled.div`
         width : 80vw;
-        margin : 30px auto;
+        margin : 0px 20px ;
         background: #FFFFFF;
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
         border-radius: 5px;

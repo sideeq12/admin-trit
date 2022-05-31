@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const My_rev = styled.div`
     /* border : 1px solid red; */
-    width : fit-content;
+    width : 400px;
     height : fit-content;
-    padding : 20px 60px;
+    padding : 10px 60px 10px 30px ;
     display: flex;
     background: #FFFFFF;
 box-shadow: 0px 2.10101px 4.20202px rgba(0, 0, 0, 0.1);
@@ -31,7 +31,8 @@ max-width : 300px;
         display: flex;
         flex-direction: column;
         font-family: 'Open Sans';
-        font-weight: bold;
+        font-weight: 900;
+        font-size: 20px;
         label{
             margin-top: 5px;
             font-size: small;
@@ -43,8 +44,8 @@ max-width : 300px;
 
 export const Revl = styled.div`
     width: 50vw;
-    border : 1px solid red;
+    /* border : 1px solid red; */
     display: flex;
-    margin : 10px auto;
+    /* margin : 10px auto; */
     flex-wrap: wrap;
 `

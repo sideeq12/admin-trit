@@ -9,7 +9,14 @@ export const Mynav = styled.div`
     flex-direction: column;
     gap : 2rem;
     align-items: center;
-    padding-top: 50px;
+    padding-top: 20px;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+/* Frame Shadow */
+
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     .li{
         svg{
             /* color :#C9C9C9; */

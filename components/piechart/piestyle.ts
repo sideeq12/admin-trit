@@ -11,16 +11,16 @@ export const PIE = styled.div`
     width : fit-content;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 15px;
     border-top :1px solid #E3E3E3;
-    padding-top: 30px;
+    padding-top: 20px;
     font-family: 'Open Sans';
     .x-box{
         border-radius: 50%;
-        height: 200px;
-        width: 200px;
+        height: 140px;
+        width: 140px;
         background-color: brown;
-        margin-right: 20px;
+        margin-right: 15px;
 
         background: repeating-conic-gradient(
             from 0deg,
@@ -36,7 +36,7 @@ export const PIE = styled.div`
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            font-size: small;
+            font-size: x-small;
             margin-top: 10px;
             .tick{
                 margin-right: 15px;
@@ -55,7 +55,7 @@ export const PIE = styled.div`
     }
 `
 export const Pie_ch = styled.div`
-    margin : 20px auto;
+    margin : 10px;
     width: fit-content;
     padding : 30px;
     background: #FFFFFF;

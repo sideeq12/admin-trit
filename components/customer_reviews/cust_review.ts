@@ -14,7 +14,7 @@ export const Review = styled.div`
     font-family: 'Open Sans';
     display: flex;
     gap : 1rem;
-    margin : 10px auto;
+    margin : 10px;
     
     span{
         font-weight: bold;

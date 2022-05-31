@@ -10,7 +10,7 @@ interface mycolor{
 export const Sta = styled.div<mycolor>`
         background: ${props => props.back};
         box-shadow: ${props => props.shadow};
-        padding : 20px 30px;
+        padding : 20px 50px 20px 20px;
         margin : 20px;
         border-radius: 5px;
         width : fit-content;
@@ -30,7 +30,7 @@ export const Sta = styled.div<mycolor>`
             }
         }
         .circle{
-          margin-left: 10px;
+          margin-left: 30px;
           .x-box{
             background: repeating-conic-gradient(
             from 0deg,
@@ -43,7 +43,7 @@ export const Sta = styled.div<mycolor>`
 `
 
 export const Statistic = styled.div`
-    margin : 30px auto;
+    margin : 0px;
     display: flex;
     width: fit-content;
     flex-wrap: wrap;

@@ -10,6 +10,12 @@ export const SearchNav = styled.div`
     align-items: center;
     margin-left: auto;
     padding : 10px 0px;
+    position: fixed;
+    top: 0px;
+    left: 10vw;
+    background: #FFFFFF;
+
+box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     .left{
         border : 1px solid blue;
         margin-left: 20px;
