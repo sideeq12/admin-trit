@@ -65,10 +65,13 @@ border-radius: 5px;
        }
 
 `
-
+interface bg{
+    bgcolor : boolean
+}
 export const Order_id = styled.div`
-width : 50%;
-margin-right : 20px;
+    width : 50%;
+    margin-right : 20px;
+    padding-top: 20px;
       .data{
 
 background: #FFFFFF;
@@ -97,4 +100,44 @@ background: #FFFFFF;
         }
     }
 }
+.productinfo{
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+
+    font-size: small;
+    .info{  
+        padding : 15px 0px;
+        display: flex;
+        .pro{
+        min-width: 40%;
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+        .imahe{
+            height: 30px;
+            width: 30px;
+            margin-right: 10px;
+            border-radius: 2px;
+            background-image: url("/blouse.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+    }
+    .qty, .color, .size{
+        display: flex;
+        align-items: center;
+        min-width: 15%;
+    }
+    }
+    
+}
+`
+
+export const Info = styled.div<bg>`
+        width: 100%;
+        background-color:${props => props.bgcolor ? "#D3EDF8" : "#FFF"};
+        color : ${props => props.bgcolor ? "#09668A" : "#5A5A5B"};
+        border-radius: ${props => props.bgcolor ? "5px 5px 0px 0px" : "none"};
+        border-bottom: ${props => props.bgcolor ? "none" : "1px solid #E3E3E3;"};
 `

@@ -1,4 +1,4 @@
-import { Order_id, Order_Summary, The_order } from "./ordered"
+import { Order_id, Order_Summary, The_order, Info } from "./ordered"
 
 
 
@@ -6,6 +6,38 @@ export const Use_order = () =>{
     return(
         <The_order>
             <Order_id>
+                <div className="productinfo">
+                <Info bgcolor={true} className="info">
+                        <div className="pro">Product</div>
+                        <div className="qty">Qty</div>
+                        <div className="color">Color</div>
+                        <div className="size">Sizec</div>
+                        <div className="Price">Total Price</div>
+                    </Info>
+                    <Info bgcolor={false} className="info">
+                        <div className="pro"><div className="imahe"></div> Plain Round Neck blouse</div>
+                        <div className="qty">Qty</div>
+                        <div className="color">Color</div>
+                        <div className="size">Sizec</div>
+                        <div className="Price">Total Price</div>
+                    </Info>
+                    <Info bgcolor={false} className="info">
+                        <div className="pro"><div className="imahe"></div> Plain Round Neck blouse</div>
+                        <div className="qty">Qty</div>
+                        <div className="color">Color</div>
+                        <div className="size">Sizec</div>
+                        <div className="Price">Total Price</div>
+                    </Info>
+                    <Info bgcolor={false} className="info">
+                        <div className="pro"><div className="imahe"></div> Plain Round Neck blouse</div>
+                        <div className="qty">Qty</div>
+                        <div className="color">Color</div>
+                        <div className="size">Sizec</div>
+                        <div className="Price">Total Price</div>
+                    </Info>
+                   
+                  
+                </div>
             <div className="data">
                 <span>Delivery Address</span>
                 <div className="cont">
