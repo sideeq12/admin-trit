@@ -1,4 +1,4 @@
-import { Order_id, Order_Summary, The_order, Info } from "./ordered"
+import { Order_id, Order_Summary, The_order, Info, Coolor } from "./ordered"
 
 
 
@@ -15,27 +15,34 @@ export const Use_order = () =>{
                         <div className="Price">Total Price</div>
                     </Info>
                     <Info bgcolor={false} className="info">
-                        <div className="pro"><div className="imahe"></div> Plain Round Neck blouse</div>
-                        <div className="qty">Qty</div>
-                        <div className="color">Color</div>
-                        <div className="size">Sizec</div>
-                        <div className="Price">Total Price</div>
+                        <div className="pro"> <div className="imahe"></div> Plain Round Neck</div>
+                        <div className="qty">x01</div>
+                        <div className="color"><Coolor bord="#138951"></Coolor></div>
+                        <div className="size">XS</div>
+                        <div className="Price">$120.00</div>
                     </Info>
                     <Info bgcolor={false} className="info">
-                        <div className="pro"><div className="imahe"></div> Plain Round Neck blouse</div>
-                        <div className="qty">Qty</div>
-                        <div className="color">Color</div>
-                        <div className="size">Sizec</div>
-                        <div className="Price">Total Price</div>
+                    <div className="pro"> <div className="imahe"></div> Plain Round Neck</div>
+                        <div className="qty">x12</div>
+                        <div className="color"><Coolor bord="#2A2A2A"></Coolor></div>
+                        <div className="size">XXL</div>
+                        <div className="Price">$120.00</div>
                     </Info>
                     <Info bgcolor={false} className="info">
-                        <div className="pro"><div className="imahe"></div> Plain Round Neck blouse</div>
-                        <div className="qty">Qty</div>
-                        <div className="color">Color</div>
-                        <div className="size">Sizec</div>
-                        <div className="Price">Total Price</div>
+                    <div className="pro"> <div className="imahe"></div> Plain Round Neck</div>
+                        <div className="qty">x12</div>
+                        <div className="color"><Coolor bord="#EAA046"></Coolor></div>
+                        <div className="size">XXL</div>
+                        <div className="Price">$120.00</div>
                     </Info>
-                   
+                    <Info bgcolor={false} className="info">
+                    <div className="pro"> <div className="imahe"></div> Plain Round Neck</div>
+                        <div className="qty">x12</div>
+                        <div className="color"><Coolor bord="#2A2A2A"></Coolor></div>
+                        <div className="size">XXL</div>
+                        <div className="Price">$120.00</div>
+                    </Info>
+                  
                   
                 </div>
             <div className="data">

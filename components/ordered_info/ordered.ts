@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export const The_order = styled.div`
         width : 80vw;
-        border : 1px solid blue;
         display: flex;
         margin : 20px auto;
         padding : 10px;
@@ -140,4 +139,13 @@ export const Info = styled.div<bg>`
         color : ${props => props.bgcolor ? "#09668A" : "#5A5A5B"};
         border-radius: ${props => props.bgcolor ? "5px 5px 0px 0px" : "none"};
         border-bottom: ${props => props.bgcolor ? "none" : "1px solid #E3E3E3;"};
+`
+interface mybg{
+    bord : string
+}
+export const Coolor = styled.div<mybg>`
+    height: 18px;
+    width: 18px;
+    border-radius: 100%;
+    border : 6px solid ${props => props.bord};
 `
