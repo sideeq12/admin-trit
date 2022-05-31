@@ -6,7 +6,6 @@ import styled from "styled-components";
 export const SearchNav = styled.div`
     width : 90vw;
     height: 10vh;
-    /* border : 1px solid red; */
     display: flex;
     align-items: center;
     margin-left: auto;
@@ -34,7 +33,6 @@ export const SearchNav = styled.div`
         display: flex;
         align-items: center;
         margin-right: 60px;
-         /* border : 1px solid blue; */
         .ico{
         }
         .name{
