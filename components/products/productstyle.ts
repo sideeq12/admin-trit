@@ -6,8 +6,8 @@ interface mydata {
 }
 
 export const Product_section = styled.div`
-        width : 90vw;
-        margin : 100px auto;
+        width : 85vw;
+        margin : 0 auto;
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
         border-radius: 5px;
         .titlesection{
@@ -42,6 +42,11 @@ export const Product_section = styled.div`
               }
             }label.id{
                 width : 7%;
+            }
+            label.idcode{
+                svg{
+                    margin-right: 10px;
+                }
             }
         }
 `
