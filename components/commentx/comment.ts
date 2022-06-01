@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 
 export const Comment_layout = styled.div`
-    width : 90vw;
-    margin : 30px auto;
+    width : 80vw;
+    margin-top: 30px;
+    margin-left : 50px;
     .heading{
         width : 90vw;
         padding : 10px 30px;
@@ -53,11 +54,11 @@ export const Comment_layout = styled.div`
         
         .review{
             min-width: 45%;
-            padding: 10px 0px;
+            padding: 10px 30px 10px 0px;
             p{
             color: #5A5A5B;
             font-size: small;
             }
         }
-    }
+    
 `

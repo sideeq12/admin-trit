@@ -5,9 +5,10 @@ interface check{
 }
 export const Email_layout = styled.div`
     width : 80vw;
-    margin : 20px auto;
+    margin-left: 20px;
     justify-content: space-between;
     display: flex;
+    margin-top: 20px;
     .email_list{
         width : 35%;
     }

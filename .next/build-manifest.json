@@ -25,20 +25,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/admin": [
+    "/mailresponse": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/admin.js"
+      "static/chunks/pages/mailresponse.js"
     ],
-    "/allproducts": [
+    "/reviewsmanager": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/allproducts.js"
-    ],
-    "/userorders": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/userorders.js"
+      "static/chunks/pages/reviewsmanager.js"
     ]
   },
   "ampFirstPages": []

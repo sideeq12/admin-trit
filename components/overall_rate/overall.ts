@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 
 
-export const Overall = styled.div`
-   
+export const Overall = styled.div`  
     background: #FFFFFF;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
@@ -16,7 +15,7 @@ export const Overall = styled.div`
     align-items: center;
     display: flex;
     gap : 1rem;
-    margin : 30px auto;
+    margin-left: 50px;
     width: 80vw;
     
     span{
