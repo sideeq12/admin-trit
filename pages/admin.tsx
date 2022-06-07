@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { ReviewList } from "../components/customer_reviews/cust_rev";
+import { Grap } from "../components/graph/graph";
 import { Pie_chart } from "../components/piechart/piechart";
 import { Revenue } from "../components/revenue/revenue";
 
@@ -56,6 +57,7 @@ const Home = () =>{
             <div className="seccover">
             <Sec>
             <Revenue />
+            <Grap />
             </Sec>
             <Sec2>
                 <Pie_chart />

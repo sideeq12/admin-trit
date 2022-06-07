@@ -2,10 +2,11 @@ import styled from "styled-components";
 import { My_Products } from "../components/products/product";
 
 const Allcover = styled.div`
-    border : 1px solid blue;
-    background-color: #F9F9F9;
+    /* border : 1px solid blue; */
+    background-color: rgb(249, 249, 249);
     padding-top: 10vh;
     padding-left: 10vw;
+    padding-bottom: 100px;
 `
 
 const Alldet = styled.div`
@@ -51,6 +52,7 @@ const Alldet = styled.div`
 
 const Allprod = ()=>{
     return(
+        
         <Allcover>
            <Alldet>
                <span>All Products</span> <div><select name="" id="">

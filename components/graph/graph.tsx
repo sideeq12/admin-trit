@@ -2,10 +2,15 @@ import { My_graph } from "./graphstyle"
 
 
 
-export const Grap = ()=>{
+export const Grap = ()=> { 
     return(
         <My_graph>
-            hi o
+            <div className="graph">
+                 <img src="/salesgraph.svg" alt="graph loading.." />
+            </div>
+           
         </My_graph>
     )
 }
+
+
