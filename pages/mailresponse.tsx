@@ -7,6 +7,7 @@ const Mess = styled.div`
     padding-top: 15vh;
     padding-left: 10vw;
     background-color: #F9F9F9;
+    padding-bottom: 100px;
     span{
         font-family: 'Tinos';
         font-size: 18px;
