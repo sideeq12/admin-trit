@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { Email_section } from "../components/email_message/email";
+import { Navbar } from "../components/admin_nav/adminNav";
+import { Searchbar } from "../components/upsearch/upsearch";
 
 const Mess = styled.div`
     padding-top: 15vh;
@@ -20,12 +22,16 @@ const Mess = styled.div`
 
 const MessageList = ()=>{
     return(
+       <>
+        <Navbar />
+        <Searchbar />
         <Mess>
             <span>Your Messages</span>
             <div className="covert">
                 <Email_section />
             </div>
         </Mess>
+       </>
     )
 }
 

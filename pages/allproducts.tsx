@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { My_Products } from "../components/products/product";
+import { Navbar } from "../components/admin_nav/adminNav";
+import { Searchbar } from "../components/upsearch/upsearch";
 
 const Allcover = styled.div`
     /* border : 1px solid blue; */
@@ -52,7 +54,9 @@ const Alldet = styled.div`
 
 const Allprod = ()=>{
     return(
-        
+        <>
+        <Navbar />
+        <Searchbar />
         <Allcover>
            <Alldet>
                <span>All Products</span> <div><select name="" id="">
@@ -69,6 +73,7 @@ const Allprod = ()=>{
             <My_Products />
               </div>
         </Allcover>
+        </>
     )
 }
 

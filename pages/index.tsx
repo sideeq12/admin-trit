@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import styled from 'styled-components'
 import { My_test } from '../components/test/test'
+import {useRouter } from "next/router"
 
 const Login = styled.div`
 
@@ -129,6 +130,7 @@ const Info  = styled.div`
 
 const Home: NextPage = () => {
   const [sign, setSign ] = useState(true)
+  const router = useRouter()
   
   return (
     <Login>
@@ -142,7 +144,7 @@ const Home: NextPage = () => {
         <div className="circle cir3"></div>
         </div>
       </div>
-      <form action="">
+      <form action="/admin">
       {sign ?   <DataInput>
           <label htmlFor="">Username</label>
           <input type="text" />
@@ -162,7 +164,7 @@ const Home: NextPage = () => {
         <Info>
         <input type="checkbox" /> By clicking on this box, you agree to accept out terms and agreements.
         </Info>
-        <button type='submit'>{ !sign ? "Login" : "Register"}</button>
+        <button type='submit' onClick={()=>router.push("/admin")}>{ !sign ? "Login" : "Register"}</button>
           <br />
         <span>Already a menber ? <label htmlFor="Login" onClick={()=> setSign(!sign)} >{ sign ? "Login" : "Register"}</label></span>
       </form>

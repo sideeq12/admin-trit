@@ -1,11 +1,14 @@
 import styled from "styled-components";
 import { Order_details } from "../components/order_details/order";
 import { Stats } from "../components/stat/stats";
+import {Navbar } from "../components/admin_nav/adminNav"
+import { Searchbar } from "../components/upsearch/upsearch"
 
 const Theorder = styled.div`
     padding-top: 10vh;
     padding-left: 10vw;
     background-color: #F9F9F9;
+    padding-bottom: 100px;
 
 `
 const HomeLayout = styled.div`
@@ -36,6 +39,9 @@ const Sta = styled.div`
 
 const TheUserOrders = ()=>{
     return(
+       <>
+       <Navbar />
+       <Searchbar />
         <Theorder>
                <HomeLayout>
                 <span>Orders</span>
@@ -49,6 +55,7 @@ const TheUserOrders = ()=>{
         </Sta>
         <Order_details />
         </Theorder>
+       </>
     )
 }
 

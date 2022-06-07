@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import { Comments } from "../components/commentx/commentx"
 import { Rate_overall } from "../components/overall_rate/overallrate"
+import { Navbar } from "../components/admin_nav/adminNav"
+import { Searchbar } from "../components/upsearch/upsearch"
 
 
 const Allmanager = styled.div`
@@ -33,7 +35,9 @@ const Coverrate = styled.div`
     /* border : 1px solid blue; */
 `
 const ReviewsManager = ()=>{
-    return(
+    return(<>
+        <Navbar />
+        <Searchbar />
         <Allmanager>
             <Manag>
                 <span>
@@ -50,6 +54,7 @@ const ReviewsManager = ()=>{
                     <Comments />
                 </Coverrate>
         </Allmanager>
+    </>
     )
 }
 

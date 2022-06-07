@@ -3,6 +3,8 @@ import { ReviewList } from "../components/customer_reviews/cust_rev";
 import { Grap } from "../components/graph/graph";
 import { Pie_chart } from "../components/piechart/piechart";
 import { Revenue } from "../components/revenue/revenue";
+import { Navbar } from "../components/admin_nav/adminNav";
+import { Searchbar } from "../components/upsearch/upsearch";
 
 const MyHome = styled.div`
         background-color: #F9F9F9;
@@ -46,6 +48,9 @@ const Sec2 = styled.div`
 
 const Home = () =>{
     return(
+        <>
+        <Navbar />
+        <Searchbar />
         <MyHome>
             <HomeLayout>
                 <span>Dashboard</span>
@@ -65,6 +70,7 @@ const Home = () =>{
             </Sec2>
             </div>
         </MyHome>
+        </>
     )
 }
 

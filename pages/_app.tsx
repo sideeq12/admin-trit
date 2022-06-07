@@ -7,8 +7,6 @@ import { Searchbar } from '../components/upsearch/upsearch'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-    {/* <Navbar />
-    <Searchbar /> */}
     <Component {...pageProps} />
     </>
   )
