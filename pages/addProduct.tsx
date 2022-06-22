@@ -1,20 +1,21 @@
 import styled from "styled-components"
 import { Navbar } from "../components/admin_nav/adminNav"
 import { Searchbar } from "../components/upsearch/upsearch"
+import { useState } from "react"
 
 const Productlayer = styled.div`
     margin-top: 10vh;
     margin-left: 20vh;
-    border : 1px solid red;
     display: flex;
 `
 const ImageSection = styled.div`
-    width : 45%;
-    background-color: blue;
-    height : 90vh;
+    width : 40%;
+    border-right: 1px solid black;
+    margin-top: 20px;
+    height : 80vh;
 `
 const Details = styled.div`
-    width : 40%;
+    width : 45%;
     /* background-color: red; */
     padding-top: 50px;
     height: 90vh;
@@ -45,6 +46,7 @@ const DataInput = styled.div`
 const Select = styled.div`
     margin-top: 20px;
     display: flex;
+    flex-wrap: wrap;
     font-size: small;
     div{
         margin-right: 20px;
@@ -63,6 +65,10 @@ const Select = styled.div`
         background-color: white;
         padding : 10px 15px;
     }
+    div.wide{
+        width: 100%;
+        margin-top: 10px;
+    }
     button.upload{
         background: #34ADDC;
         border : none;
@@ -72,10 +78,39 @@ const Select = styled.div`
         border-radius: 5px;
         margin-right: 20px;
     }
+    button.cancle{
+        background: #CD5334;
+        border : none;
+        color : white;
+        padding : 5px 30px;
+        box-shadow: 0px 9.88235px 26.3529px rgba(52, 173, 220, 0.25);
+        border-radius: 5px;
+        margin-right: 20px;
+    }
+    .price{
+        input{
+            width : 80px;
+        }
+    }
+    button:hover{
+        cursor : pointer;
+    }
 
 `
-
+const Color = styled.span`
+    color : white;
+    background: rgba(52, 173, 220, 0.89);
+    padding : 5px;
+    border-radius: 3px;
+`
 const addProduct = ()=>{
+    const [colors, setCoolors ]= useState<string[]>([])
+    const [products, setProducts ] = useState({name : ""})
+
+    const setColor = (event : React.ChangeEvent<HTMLInputElement>)=>{
+        const coolors = event.target.value.split(" ")
+        setCoolors(coolors)
+    }
     return(
         <>
         <Navbar />
@@ -92,14 +127,23 @@ const addProduct = ()=>{
            <label htmlFor="product details"> Description * </label>
            <textarea />
            </DataInput>
-           <DataInput>
-           <label htmlFor="product name"> Available sizes</label>
-           <input type="text" name="product name" />
-           </DataInput>
-           <DataInput>
-           <label htmlFor="product name"> Available colors</label>
-           <input type="text" name="product name" />
-           </DataInput>
+          <Select>
+              <div className="wide">
+          <select>
+               <option value="">select size</option>
+               <option value="">x-small</option>
+               <option value="">small</option>
+               <option value="">large</option>
+               <option value="">x-larger</option>
+           </select>
+          </div>
+          <div className="wide">
+          <div> <label htmlFor="color">Colors <small>(seperated with space)</small></label> <br/>
+          <input type="text" name="" id="" onChange={setColor}/></div>
+          {colors.map(col=> <Color>{col}</Color>)}
+          
+          </div>
+          </Select>
            <Select>
           <div>
           <select>
@@ -120,17 +164,17 @@ const addProduct = ()=>{
            </select>
          </div>
          <div>
-             <label htmlFor="price">Price</label>
+             <label htmlFor="price">Price ($)</label>
              <input type="text" name="price"/>
          </div>
            </Select>
            <Select>
-           <div>
-             <label htmlFor="price">Proudct numbers</label>
+           <div className="price">
+             <label htmlFor="price">Proudct numbers </label>
              <input type="text" name="price"/>
          </div>
          <button className="upload">Upload</button>
-         <button>Cancel</button>
+         <button className="cancle">Cancel</button>
            </Select>
            
         </Details>
