@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { My_test } from '../components/test/test'
 import {useRouter } from "next/router"
@@ -12,6 +12,7 @@ const Login = styled.div`
   width : 100vw;
   height: 100vh;
   display: flex;
+  overflow: hidden;
   span{
     margin-left: 50px;
     color : white;
@@ -92,7 +93,7 @@ const Login = styled.div`
   }
   form{
     background-color: #34ADDC;
-    padding-top: 20vh;
+    padding-top: 10vh;
     padding-left: 3vw;
   }
 
@@ -132,7 +133,8 @@ const Info  = styled.div`
 const Home: NextPage = () => {
   const [sign, setSign ] = useState(true);
   const [ready, setReady ] = useState(false)
-  const [prevPassword, setPrevPassword] = useState("")
+  const [prevPassword, setPrevPassword] = useState("");
+  const [recPassword, setRecPassword ] = useState("")
   const [Admin, setAdmin ] = useState({adminName : "", adminMail : "", adminPassword : ""})
   const [errorMessage , setErrorMessage ] = useState("")
   const router = useRouter()
@@ -151,23 +153,29 @@ const Home: NextPage = () => {
         }
       }else if(sign && adminType === "password"){
         setPrevPassword(adminValue)
-      }else if(adminType === "confirmPassword"){
-        setAdmin({...Admin, adminPassword : adminValue});
-        console.log("adValue is" , adminValue, "prevPass", prevPassword)
-        if(adminValue !== prevPassword){
-          setErrorMessage("password not equal")
-        }else{
-          setErrorMessage("")
-        }
+      }else if( sign && adminType === "confirmPassword"){
+        setRecPassword(adminValue)
       }
   }
   const URl : string = "/api/adminAdd"
   const sendAdmin =async () => {
-    // if(sign){
-
-    // }
-    const res = await axios.post(URl, Admin);
-    console.log("the response is", res.data)
+    if(sign && prevPassword === recPassword ){
+      if(recPassword.length < 6){
+        setErrorMessage("password must be more than 6 characters!")
+      }else{
+        setErrorMessage("")
+    //   const res = await axios.post(URl, Admin);
+    // console.log("the response is", res.data);
+      }
+    }else if(sign && prevPassword !== recPassword){setErrorMessage("password not equal")
+  }else{
+      if(!sign){
+        console.log("not in ready state")
+      }
+    }
+  }
+  const prevent = (event : React.ChangeEvent<HTMLFormElement>) =>{
+    event.preventDefault()
   }
   return (
     <Login>
@@ -181,7 +189,7 @@ const Home: NextPage = () => {
         <div className="circle cir3"></div>
         </div>
       </div>
-      <form>
+      <form onSubmit={prevent}>
         <span style={{"color" : "#DB222A"}}>{errorMessage }</span>
       {sign ?   <DataInput onChange={setAdminDetails}>
           <label htmlFor="">Username</label>
@@ -202,7 +210,7 @@ const Home: NextPage = () => {
         <Info>
         <input type="checkbox" name='box' onChange={setAdminDetails} /> By clicking on this box, you agree to accept out terms and agreements.
         </Info>
-        <button type='submit' onClick={sendAdmin}>{ !sign ? "Login" : "Register"}</button>
+        <button onClick={sendAdmin}>{ !sign ? "Login" : "Register"}</button>
           <br />
         <span>Already a menber ? <label htmlFor="Login" onClick={()=> setSign(!sign)} >{ sign ? "Login" : "Register"}</label></span>
       </form>
