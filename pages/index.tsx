@@ -5,6 +5,7 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import { My_test } from '../components/test/test'
 import {useRouter } from "next/router"
+import axios from 'axios'
 
 const Login = styled.div`
 
@@ -129,9 +130,30 @@ const Info  = styled.div`
 `
 
 const Home: NextPage = () => {
-  const [sign, setSign ] = useState(true)
+  const [sign, setSign ] = useState(true);
+  const [Admin, setAdmin ] = useState({adminName : "", adminMail : "", adminPassword : ""})
+  const [errorMessage , setErrorMessage ] = useState("")
   const router = useRouter()
   
+  const setAdminDetails = (event : React.ChangeEvent<HTMLInputElement>) =>{
+      const adminValue  = event.target.value;
+      const adminType = event.target.name
+      if(adminType === "username"){
+        setAdmin({...Admin, adminName : adminValue})
+      }else if(adminType === "email"){
+        setAdmin({...Admin, adminMail : adminValue})
+      }else if(adminType === "confirmPassword"){
+        setAdmin({...Admin, adminPassword : adminValue})
+      }
+  }
+  const Prevent = (event :React.FormEvent<HTMLInputElement> )=>{
+    event.preventDefault();
+  }
+  const URl : string = "/api/adminAdd"
+  const sendAdmin =async () => {
+    const res = await axios.post(URl, Admin);
+    console.log("the response is", res.data)
+  }
   return (
     <Login>
       <div className="imageleft">
@@ -144,27 +166,27 @@ const Home: NextPage = () => {
         <div className="circle cir3"></div>
         </div>
       </div>
-      <form action="/admin">
-      {sign ?   <DataInput>
+      <form>
+      {sign ?   <DataInput onChange={setAdminDetails}>
           <label htmlFor="">Username</label>
-          <input type="text" />
+          <input type="text" name='username' />
         </DataInput> : null}
-        <DataInput>
+        <DataInput onChange={setAdminDetails}>
           <label htmlFor="">Email :</label>
-          <input type="email" />
+          <input type="email" name='email' />
         </DataInput>
-        <DataInput>
+        <DataInput onChange={setAdminDetails}>
           <label htmlFor="">Password :</label>
-          <input type="password" />
+          <input type="password" name='password' />
         </DataInput>
-        {sign ? <DataInput>
+        {sign ? <DataInput onChange={setAdminDetails}>
           <label htmlFor="">Confirm Password :</label>
-          <input type="password" />
+          <input type="password" name='confirmPassword' />
         </DataInput> : null}
         <Info>
-        <input type="checkbox" /> By clicking on this box, you agree to accept out terms and agreements.
+        <input type="checkbox" name='box' onChange={setAdminDetails} /> By clicking on this box, you agree to accept out terms and agreements.
         </Info>
-        <button type='submit' onClick={()=>router.push("/admin")}>{ !sign ? "Login" : "Register"}</button>
+        <button type='submit' onClick={sendAdmin}>{ !sign ? "Login" : "Register"}</button>
           <br />
         <span>Already a menber ? <label htmlFor="Login" onClick={()=> setSign(!sign)} >{ sign ? "Login" : "Register"}</label></span>
       </form>
