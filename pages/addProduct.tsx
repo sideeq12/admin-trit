@@ -117,7 +117,7 @@ const addProduct = ()=>{
         <Searchbar />
         <Productlayer>
         <ImageSection>
-        hi there</ImageSection>
+       Product IMage section in progress</ImageSection>
         <Details>
            <DataInput>
            <label htmlFor="product name"> Product name*</label>

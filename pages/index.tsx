@@ -215,7 +215,7 @@ const Home: NextPage = () => {
           <input type="password" name='confirmPassword' />
         </DataInput> : null}
         <Info>
-        <input type="checkbox" name='box' onChange={setAdminDetails} /> By clicking on this box, you agree to accept out terms and agreements.
+        {sign? <><input type="checkbox" name='box' onChange={setAdminDetails} /> By clicking on this box, you agree to accept out terms and agreements.</> : null}
         </Info>
         <button onClick={sendAdmin}>{ !sign ? "Login" : "Register"}</button>
           <br />
