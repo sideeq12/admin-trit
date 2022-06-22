@@ -131,7 +131,7 @@ const Info  = styled.div`
 `
 
 const Home: NextPage = () => {
-  const [sign, setSign ] = useState(true);
+  const [sign, setSign ] = useState(false);
   const [ready, setReady ] = useState(false)
   const [prevPassword, setPrevPassword] = useState("");
   const [recPassword, setRecPassword ] = useState("")
@@ -155,6 +155,8 @@ const Home: NextPage = () => {
         setPrevPassword(adminValue)
       }else if( sign && adminType === "confirmPassword"){
         setRecPassword(adminValue)
+      }else if(!sign && adminType === "password"){
+        setAdmin({...Admin, adminPassword : adminValue})
       }
   }
   const URl : string = "/api/adminAdd"
@@ -164,13 +166,18 @@ const Home: NextPage = () => {
         setErrorMessage("password must be more than 6 characters!")
       }else{
         setErrorMessage("")
-    //   const res = await axios.post(URl, Admin);
-    // console.log("the response is", res.data);
+      const res = await axios.post(URl, Admin);
+    console.log("the response is", res.data);
       }
     }else if(sign && prevPassword !== recPassword){setErrorMessage("password not equal")
   }else{
       if(!sign){
-        console.log("not in ready state")
+        console.log(Admin)
+        if(Admin.adminMail ==="admin@tritez.com" && Admin.adminPassword === "triteztest"){
+          router.push("/admin")
+        }else{
+          setErrorMessage("Incorrect credentials!")
+        }
       }
     }
   }
