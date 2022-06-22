@@ -25,10 +25,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/allproducts": [
+    "/addProduct": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/allproducts.js"
+      "static/chunks/pages/addProduct.js"
     ]
   },
   "ampFirstPages": []
