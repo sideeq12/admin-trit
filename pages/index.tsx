@@ -131,6 +131,8 @@ const Info  = styled.div`
 
 const Home: NextPage = () => {
   const [sign, setSign ] = useState(true);
+  const [ready, setReady ] = useState(false)
+  const [prevPassword, setPrevPassword] = useState("")
   const [Admin, setAdmin ] = useState({adminName : "", adminMail : "", adminPassword : ""})
   const [errorMessage , setErrorMessage ] = useState("")
   const router = useRouter()
@@ -141,16 +143,29 @@ const Home: NextPage = () => {
       if(adminType === "username"){
         setAdmin({...Admin, adminName : adminValue})
       }else if(adminType === "email"){
-        setAdmin({...Admin, adminMail : adminValue})
+        if(adminValue.includes("@")){
+          setAdmin({...Admin, adminMail : adminValue})
+          setErrorMessage("")
+        }else{
+          setErrorMessage("Please enter Valid email!")
+        }
+      }else if(sign && adminType === "password"){
+        setPrevPassword(adminValue)
       }else if(adminType === "confirmPassword"){
-        setAdmin({...Admin, adminPassword : adminValue})
+        setAdmin({...Admin, adminPassword : adminValue});
+        console.log("adValue is" , adminValue, "prevPass", prevPassword)
+        if(adminValue !== prevPassword){
+          setErrorMessage("password not equal")
+        }else{
+          setErrorMessage("")
+        }
       }
-  }
-  const Prevent = (event :React.FormEvent<HTMLInputElement> )=>{
-    event.preventDefault();
   }
   const URl : string = "/api/adminAdd"
   const sendAdmin =async () => {
+    // if(sign){
+
+    // }
     const res = await axios.post(URl, Admin);
     console.log("the response is", res.data)
   }
@@ -167,6 +182,7 @@ const Home: NextPage = () => {
         </div>
       </div>
       <form>
+        <span style={{"color" : "#DB222A"}}>{errorMessage }</span>
       {sign ?   <DataInput onChange={setAdminDetails}>
           <label htmlFor="">Username</label>
           <input type="text" name='username' />
