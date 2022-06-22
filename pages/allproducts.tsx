@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { My_Products } from "../components/products/product";
 import { Navbar } from "../components/admin_nav/adminNav";
 import { Searchbar } from "../components/upsearch/upsearch";
+import { useRouter } from "next/router";
 
 const Allcover = styled.div`
     /* border : 1px solid blue; */
@@ -53,13 +54,14 @@ const Alldet = styled.div`
 `
 
 const Allprod = ()=>{
+    const router = useRouter()
     return(
         <>
         <Navbar />
         <Searchbar />
         <Allcover>
            <Alldet>
-               <span>All Products</span> <div><select name="" id="">
+               <span>All Products</span> <div onClick={()=> router.push("/addProduct")}><select name="" id="">
                    <option value="">All Categories</option>
                    <option value="">Blouse</option>
                    <option value="">Shirt</option>
