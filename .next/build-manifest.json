@@ -5,9 +5,9 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/mC-AV9zqbC_H5l78HA_Uj/_buildManifest.js",
-    "static/mC-AV9zqbC_H5l78HA_Uj/_ssgManifest.js",
-    "static/mC-AV9zqbC_H5l78HA_Uj/_middlewareManifest.js"
+    "static/qQ6-h5Z82hSWFVUOVvbTR/_buildManifest.js",
+    "static/qQ6-h5Z82hSWFVUOVvbTR/_ssgManifest.js",
+    "static/qQ6-h5Z82hSWFVUOVvbTR/_middlewareManifest.js"
   ],
   "pages": {
     "/": [
@@ -16,7 +16,7 @@
       "static/chunks/main-fc7d2f0e2098927e.js",
       "static/chunks/94-7e42c3d80a1a04e7.js",
       "static/chunks/669-d3b35d5bd5c5664a.js",
-      "static/chunks/pages/index-7e743322c0ef5732.js"
+      "static/chunks/pages/index-694727c590563679.js"
     ],
     "/_app": [
       "static/chunks/webpack-9b312e20a4e32339.js",
@@ -37,7 +37,7 @@
       "static/chunks/main-fc7d2f0e2098927e.js",
       "static/chunks/94-7e42c3d80a1a04e7.js",
       "static/chunks/61-eab17346d919bacd.js",
-      "static/chunks/pages/addProduct-1e93febcd042652d.js"
+      "static/chunks/pages/addProduct-1b73e6f925624fd1.js"
     ],
     "/admin": [
       "static/chunks/webpack-9b312e20a4e32339.js",
