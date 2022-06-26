@@ -1,20 +1,6 @@
 {
   "/_app": "pages/_app.js",
-  "/_document": "pages/_document.js",
-  "/addProduct": "pages/addProduct.html",
-  "/admin": "pages/admin.html",
-  "/allproducts": "pages/allproducts.html",
-  "/api/adminAdd": "pages/api/adminAdd.js",
-  "/api/connection/connection": "pages/api/connection/connection.js",
-  "/api/connection/models/adminSchema": "pages/api/connection/models/adminSchema.js",
-  "/api/connection/models/productSchema": "pages/api/connection/models/productSchema.js",
-  "/api/hello": "pages/api/hello.js",
-  "/api/productAdd": "pages/api/productAdd.js",
-  "/": "pages/index.html",
-  "/mailresponse": "pages/mailresponse.html",
-  "/reviewsmanager": "pages/reviewsmanager.html",
-  "/usermessages": "pages/usermessages.html",
-  "/userorders": "pages/userorders.html",
   "/_error": "pages/_error.js",
-  "/404": "pages/404.html"
+  "/_document": "pages/_document.js",
+  "/addProduct": "pages/addProduct.js"
 }

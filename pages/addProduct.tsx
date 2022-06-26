@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import { Navbar } from "../components/admin_nav/adminNav"
 import { Searchbar } from "../components/upsearch/upsearch"
-import { useState } from "react"
+import React, { useState } from "react"
 
 const Productlayer = styled.div`
     margin-top: 10vh;
@@ -105,11 +105,51 @@ const Color = styled.span`
 `
 const addProduct = ()=>{
     const [colors, setCoolors ]= useState<string[]>([])
-    const [products, setProducts ] = useState({name : ""})
-
-    const setColor = (event : React.ChangeEvent<HTMLInputElement>)=>{
+    const [sizes, setSizes ] = useState<string[]>([])
+    const [name, setName ] = useState("")
+    const [description, setDescription ] = useState("")
+    const [price, setPrice ] = useState("")
+    const [products, setProducts ] = useState({})
+    const [Pcount, setPCount ] = useState("")
+    const [category, setCategory] = useState("")
+    const [ subCategory, setSubCategory ] = useState("")
+    
+    
+    const seName = (event : React.ChangeEvent<HTMLInputElement>) =>{
+        const datatype = event.target.name
+        const mainData = event.target.value;
+       if(datatype === "product name"){
+           setName(mainData)
+       }else if(datatype === "price"){
+           setPrice(mainData)
+       }else if(datatype === "count"){
+           setPCount(mainData)
+       }else if(datatype ===  "color"){
         const coolors = event.target.value.split(" ")
         setCoolors(coolors)
+       }
+    }
+    const setSz = (event : React.ChangeEvent<HTMLSelectElement>)=>{
+        const value = event.target.value;
+        const data = event.target.name;
+       if(data === "size"){
+        setSizes([...sizes, value])
+       }else if(data === "category"){
+            setCategory(value)
+       }else if(data === "subCategory"){
+            setSubCategory(value)
+       }  
+    }
+    const seT = (event : React.ChangeEvent<HTMLTextAreaElement>)=>{
+        setDescription(event.target.value)
+    }
+    const sendData = ()=>{
+        setProducts({...products, name : name, description : description, size : sizes, colors : colors, category : category, subCategory : subCategory, price : price, count : Pcount })
+       if(name && description){
+        console.log("cool" , products)
+       }else{
+            console.log("naa ", products)
+       }
     }
     return(
         <>
@@ -121,39 +161,40 @@ const addProduct = ()=>{
         <Details>
            <DataInput>
            <label htmlFor="product name"> Product name*</label>
-           <input type="text" name="product name" />
+           <input type="text" name="product name" onChange={seName} />
            </DataInput>
            <DataInput>
            <label htmlFor="product details"> Description * </label>
-           <textarea />
+           <textarea onChange={seT} />
            </DataInput>
           <Select>
               <div className="wide">
-          <select>
-               <option value="">select size</option>
-               <option value="">x-small</option>
-               <option value="">small</option>
+          <select name="size" onChange={setSz}>
+               <option value="nothing">select size</option>
+               <option value="x-small">x-small</option>
+               <option value="small">small</option>
                <option value="">large</option>
                <option value="">x-larger</option>
            </select>
+           {sizes.map(col=> <Color>{col}</Color>)}
           </div>
           <div className="wide">
           <div> <label htmlFor="color">Colors <small>(seperated with space)</small></label> <br/>
-          <input type="text" name="" id="" onChange={setColor}/></div>
+          <input type="text" name="color" id="" onChange={seName}/></div>
           {colors.map(col=> <Color>{col}</Color>)}
           
           </div>
           </Select>
            <Select>
           <div>
-          <select>
+          <select name="category">
                <option value="">Category</option>
                <option value="">Clothes</option>
                <option value="">Accesories</option>
            </select>
           </div>
          <div>
-         <select>
+         <select name="subCategory">
                <option value="">Sub Category</option>
                <option value="">T-shirt</option>
                <option value="">Blouses</option>
@@ -165,15 +206,15 @@ const addProduct = ()=>{
          </div>
          <div>
              <label htmlFor="price">Price ($)</label>
-             <input type="text" name="price"/>
+             <input type="text" name="price" onChange={seName}/>
          </div>
            </Select>
            <Select>
            <div className="price">
              <label htmlFor="price">Proudct numbers </label>
-             <input type="text" name="price"/>
+             <input type="text" name="count" onChange={seName}/>
          </div>
-         <button className="upload">Upload</button>
+         <button className="upload" onClick={sendData}>Upload</button>
          <button className="cancle">Cancel</button>
            </Select>
            
