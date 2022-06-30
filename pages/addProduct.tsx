@@ -125,6 +125,7 @@ const Lab = styled.label<labcheck>`
         height: 100px;
         width : 300px;
         display : flex;
+        gap : 0.5rem;
         align-items: center;
         justify-content: center;
         color:${props => props.stat ? "white" : " #34ADDC"};
@@ -215,19 +216,31 @@ const addProduct = ()=>{
         <ImageSection>
          <ImageSecCover>
                 <input type="file" name="first" id="file1" onChange={imageChec} />
-                <Lab htmlFor="file1" stat={firstfile} >Upload an Image</Lab>
+                <Lab htmlFor="file1" stat={firstfile} ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-image-fill" viewBox="0 0 16 16">
+  <path d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707v5.586l-2.73-2.73a1 1 0 0 0-1.52.127l-1.889 2.644-1.769-1.062a1 1 0 0 0-1.222.15L2 12.292V2a2 2 0 0 1 2-2zm5.5 1.5v2a1 1 0 0 0 1 1h2l-3-3zm-1.498 4a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/>
+  <path d="M10.564 8.27 14 11.708V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-.293l3.578-3.577 2.56 1.536 2.426-3.395z"/>
+</svg> Upload an Image</Lab>
             </ImageSecCover>
             <ImageSecCover>
                 <input type="file" name="secfile" id="file2" onChange={imageChe} />
-                <Lab htmlFor="file2" stat={secfile} >Upload an Image</Lab>
+                <Lab htmlFor="file2" stat={secfile} > <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-image-fill" viewBox="0 0 16 16">
+  <path d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707v5.586l-2.73-2.73a1 1 0 0 0-1.52.127l-1.889 2.644-1.769-1.062a1 1 0 0 0-1.222.15L2 12.292V2a2 2 0 0 1 2-2zm5.5 1.5v2a1 1 0 0 0 1 1h2l-3-3zm-1.498 4a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/>
+  <path d="M10.564 8.27 14 11.708V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-.293l3.578-3.577 2.56 1.536 2.426-3.395z"/>
+</svg> Upload an Image</Lab>
             </ImageSecCover> 
             <ImageSecCover>
                 <input type="file" name="thirdfile" id="file3" onChange={imageCh} />
-                <Lab htmlFor="file3" stat={thirdfile} >Upload an Image</Lab>
+                <Lab htmlFor="file3" stat={thirdfile} > <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-image-fill" viewBox="0 0 16 16">
+  <path d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707v5.586l-2.73-2.73a1 1 0 0 0-1.52.127l-1.889 2.644-1.769-1.062a1 1 0 0 0-1.222.15L2 12.292V2a2 2 0 0 1 2-2zm5.5 1.5v2a1 1 0 0 0 1 1h2l-3-3zm-1.498 4a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/>
+  <path d="M10.564 8.27 14 11.708V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-.293l3.578-3.577 2.56 1.536 2.426-3.395z"/>
+</svg> Upload an Image</Lab>
             </ImageSecCover>
             <ImageSecCover>
                 <input type="file" name="fourtfile" id="file4" onChange={imageC} />
-                <Lab htmlFor="file4" stat={fourtfile}> Upload an Image</Lab>
+                <Lab htmlFor="file4" stat={fourtfile}> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-image-fill" viewBox="0 0 16 16">
+  <path d="M4 0h5.293A1 1 0 0 1 10 .293L13.707 4a1 1 0 0 1 .293.707v5.586l-2.73-2.73a1 1 0 0 0-1.52.127l-1.889 2.644-1.769-1.062a1 1 0 0 0-1.222.15L2 12.292V2a2 2 0 0 1 2-2zm5.5 1.5v2a1 1 0 0 0 1 1h2l-3-3zm-1.498 4a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z"/>
+  <path d="M10.564 8.27 14 11.708V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-.293l3.578-3.577 2.56 1.536 2.426-3.395z"/>
+</svg> Upload an Image</Lab>
             </ImageSecCover>
         </ImageSection>
         <Details>
